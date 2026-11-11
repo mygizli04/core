@@ -30,6 +30,9 @@ if ERRORLEVEL 1 (
     exit /b %ERRORLEVEL%
 )
 
+copy libcrypto_static.lib "%PACKIT_PACKAGE_PATH%\lib"
+copy libssl_static.lib "%PACKIT_PACKAGE_PATH%\lib"
+
 nmake install_docs
 if ERRORLEVEL 1 (
     echo OpenSSL install docs failed
